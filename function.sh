@@ -7,7 +7,6 @@ function cpRsaKey {
 }
 
 function installSoft {
-
   # update and install apps
   ssh $1 '
   sudo apt-get upgrade
