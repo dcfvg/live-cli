@@ -1,0 +1,136 @@
+digraph {
+
+	label="TDN — video, 20.05.2015"
+	edge[fontsize=10, color="blue",fontcolor=blue]
+	nodesep=0.2
+	#rankdir=BT;
+
+	subgraph devices{
+
+		node[shape="box3d" ]
+		
+		mac_1
+		mac_2
+		mac_3
+
+		
+		
+		rpi_c
+		rpi_d
+		rpi_e
+		rpi_f
+
+		mac_admin
+		pc_trad
+		pc_word
+
+	}
+
+	subgraph screen {
+		node[shape="trapezium" style="filled" color="grey" fontcolor="black" ]
+		
+		tulle
+		cyclo
+
+
+		cyclo_2
+
+		moniteur_1
+		moniteur_2
+		moniteur_3
+		moniteur_4
+		moniteur_5
+		moniteur_6
+
+		moniteur_po1
+		moniteur_po2
+	}
+
+	subgraph switch {
+		node[style="filled" color="black" fontcolor="white" ]
+
+
+		switch_2
+		switch
+
+
+	}
+
+	subgraph cluster_grandesalle {
+
+		label="GRANDE SALLE"
+
+		subgraph cluster_grandins {
+				
+			label="GRADINS"
+			moniteur_1
+			moniteur_2
+			moniteur_3
+
+		}
+
+
+
+		subgraph cluster_swamp {
+
+			label="SWAMP CLUB"
+
+			mac_1 mac_2 mac_3 
+			  rpi_c
+			moniteur_4
+			
+			pc_trad
+		}
+
+		subgraph cluster_plateau {
+
+			label="PLATEAU"
+
+			moniteur_po2
+			moniteur_po1
+
+			tulle
+			cyclo
+	
+
+		}
+
+		switch
+	}
+ 		
+	subgraph cluster_transfo {
+		label="TRANSFORMABLE"
+
+		photo -> rpi_d 
+		cyclo_2
+		cam_panasonic
+		switch_2
+	}
+
+	subgraph cluster_hall{
+
+		label="HALL"
+		rpi_f -> moniteur_5 [label=" HDMI"]
+		rpi_e -> moniteur_6 [label=" HDMI"]
+	}
+
+	rpi_c -> moniteur_4 [label=" HDMI"]
+
+
+	mac_1 -> moniteur_1 [label=" HDMI"]
+	mac_2 -> moniteur_2 [label=" HDMI"]
+	mac_3 -> moniteur_3 [label=" HDMI"]
+
+
+
+	pc_word -> {moniteur_po1, moniteur_po2} [label=" VGA"]
+
+
+	edge[fontsize=10, color="red", fontcolor=red]
+		{mac_admin, pc_trad} -> switch [label=" VGA"]
+		switch -> {tulle, cyclo}
+		cam_panasonic -> switch_2 [label=" HDMI ?"]
+		{pc_word, mac_admin} -> switch_2 -> cyclo_2 [label=" HDMI ?"]
+
+
+}

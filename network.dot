@@ -1,0 +1,71 @@
+digraph {
+
+	label="TDN — réseau, 20.05.2015"
+	edge[fontsize=10, color="blue"]
+	#nodesep=.4
+	#rankdir=LR;
+
+	subgraph devices{
+
+		node[shape="box3d" ]
+		
+		mac_1
+		mac_2
+		mac_3
+
+		rpi_a
+		rpi_b
+		rpi_c
+		rpi_d
+		rpi_e
+		rpi_f
+
+		mac_admin
+
+	}
+
+	subgraph network {
+		node[shape="invhouse" style="filled" color="red" fontcolor="white" ]
+		
+		reseau_filaire
+		reseau_wifi
+		internet
+	}
+
+
+	subgraph cluster_swamp {
+
+		label="SWAMP CLUB"
+
+		mac_1 mac_2 mac_3 
+		rpi_a rpi_b rpi_c
+
+
+	}
+
+ 		
+	subgraph cluster_transfo {
+		label="TRANSFORMABLE"
+
+		rpi_d
+	}
+
+	subgraph cluster_hall{
+
+		label="HALL"
+		rpi_f
+
+	}
+
+	 {mac_1, mac_2, mac_3, rpi_a, rpi_b, rpi_c, rpi_d, rpi_f} -> reseau_filaire
+
+	 reseau_filaire ->  internet
+	 rpi_e -> reseau_wifi
+	 reseau_wifi -> internet
+
+	edge[fontsize=10, color="red"]
+
+		mac_admin -> reseau_wifi -> reseau_filaire 
+	 	mac_admin -> reseau_filaire
+
+}
