@@ -16,7 +16,6 @@ mkdir -vp $inbox$name
 wget -O $inbox$name/$now.png "$url/pub?w=$2&h=$2"
 rm `duff -re $inbox$name/`
 
-
 convert -resize $size -alpha remove \
 				-loop 0  -delay 1x3\
 				-colors 8 -dither FloydSteinberg \
