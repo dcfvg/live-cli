@@ -8,8 +8,9 @@ do
 	echo "=====>" $pi
 
 	# ssh $pi
-	# cpRsaKey $pi
+	cpRsaKey $pi
 	installSoft $pi
 	initProject $pi
-	
+	updateProjet $pi
+
 done
