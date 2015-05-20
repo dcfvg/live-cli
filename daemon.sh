@@ -4,7 +4,6 @@ source config.sh
 
 
 # make timelapse animation
-
 size=350
 target="/Users/benoit/Scripts/custom/live-cli/content/anim-e"
 
@@ -17,7 +16,6 @@ convert -resize $size \
 				"$target/*.jpeg" $target/animated.gif
 
 gifsicle -O $target/animated.gif > $target/"anim.gif"
-
 
 ## get draw
 bash apps/gdrawhistory/getgdraw.sh "main" 600 "https://docs.google.com/drawings/d/15b1lUUE1S0mQIukwp6-t5wvYep1MiUw-XC6ixeEVTiM"

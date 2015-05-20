@@ -11,7 +11,7 @@ function installSoft {
   ssh $1 '
   sudo apt-get upgrade
   sudo apt-get update
-  sudo apt-get install  netatalk screen \
+  sudo apt-get install  netatalk screen duff \
                         detox bash-completion watch \
                         sane sane-utils libsane-extras xsane \
                         streamer ffmpeg gifsicle \
