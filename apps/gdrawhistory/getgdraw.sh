@@ -1,7 +1,6 @@
 #!/bin/bash
 # set -x
 
-# http://duff.dreda.org/
 # watch -n 10 bash getgdraw.sh 
 
 name=$1
