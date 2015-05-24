@@ -2,16 +2,16 @@
 # set -x
 
 function cpRsaKey {
-  # copy rsa key in .ssh folder in $1
-  cat ~/.ssh/id_rsa.pub | ssh $1 '[ ! -d .ssh/ ] && mkdir .ssh/; cat >> .ssh/authorized_keys; exit'
+  # copy rsa key in .ssh folder in pi@$1
+  cat ~/.ssh/id_rsa.pub | ssh pi@$1 '[ ! -d .ssh/ ] && mkdir .ssh/; cat >> .ssh/authorized_keys; exit'
 }
 
 function installSoft {
   # update and install apps
-  ssh $1 '
+  ssh pi@$1 '
   sudo apt-get upgrade
   sudo apt-get update
-  sudo apt-get install  netatalk screen duff \
+  sudo apt-get install  netatalk screen duff nmap chromium\
                         detox bash-completion watch \
                         sane sane-utils libsane-extras xsane \
                         streamer ffmpeg gifsicle \
@@ -23,7 +23,7 @@ function installSoft {
 function initProject {
   # init project and clone git repository
 
-  ssh $1 '
+  ssh pi@$1 '
 
   cli="Scripts/custom/live-cli"
   content="$cli/content/"
@@ -38,13 +38,15 @@ function initProject {
 function updateProjet {
   # get code last version
 
-  ssh $1 '
+  ssh pi@$1 '
   
   cli="Scripts/custom/live-cli"
   content="$cli/content/"
 
   cd $cli
+  git reset --hard
   git pull
+
   exit 
   '
 }

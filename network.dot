@@ -9,16 +9,19 @@ digraph {
 
 		node[shape="box3d" ]
 		
-		mac_1
+		mac_1 
 		mac_2
 		mac_3
 
-		rpi_a
-		rpi_b
-		rpi_c
-		rpi_d
-		rpi_e
-		rpi_f
+		rpi_a # gui
+		rpi_b # gui
+		rpi_c # gui
+		rpi_d # ensad
+
+		rpi_e # benoit
+		rpi_f # benoit
+
+##		rpi_g # NA
 
 		mac_admin
 
@@ -31,23 +34,19 @@ digraph {
 		reseau_wifi
 		internet
 	}
-
-
 	subgraph cluster_swamp {
 
 		label="SWAMP CLUB"
 
 		mac_1 mac_2 mac_3 
-		rpi_a rpi_b rpi_c
-
-
+		rpi_e
 	}
 
  		
 	subgraph cluster_transfo {
 		label="TRANSFORMABLE"
 
-		rpi_d
+		rpi_d rpi_c rpi_a rpi_b
 	}
 
 	subgraph cluster_hall{

@@ -1,0 +1,129 @@
+digraph {
+
+	label="TDN — video, 21.05.2015"
+	edge[fontsize=10, color="blue",fontcolor=blue]
+	nodesep=0.2
+	rankdir=LR;
+
+	subgraph devices{
+
+		node[shape="box3d" ]
+		
+		mac_1
+		mac_2
+		mac_3
+
+		
+		
+		rpi_c
+		rpi_d
+		rpi_e
+		rpi_f
+
+		mac_admin
+		pc_trad
+		pc_word
+
+	}
+
+	subgraph screen {
+		node[shape="trapezium" style="filled" color="grey" fontcolor="black" ]
+		
+		tulle
+		cyclo
+
+
+		cyclo_2
+
+		moniteur_1
+		moniteur_2
+		moniteur_3
+		moniteur_4
+		moniteur_5
+
+
+		moniteur_po1
+		moniteur_po2
+	}
+
+	subgraph switch {
+		node[style="filled" color="black" fontcolor="white" ]
+
+
+		switch
+		grille
+		splitter
+
+
+	}
+
+	subgraph cluster_grandesalle {
+
+		label="GRANDE SALLE"
+
+		subgraph cluster_grandins {
+				
+			label="GRADINS"
+			moniteur_1
+			moniteur_2
+			moniteur_3
+
+			camera
+
+		}
+
+		subgraph cluster_swamp {
+
+			label="SWAMP CLUB"
+
+			mac_1 mac_2 mac_3 
+			  rpi_c rpi_e
+			moniteur_4
+			
+			pc_trad
+		}
+
+		subgraph cluster_plateau {
+
+			label="PLATEAU"
+
+			splitter
+			moniteur_po2
+			moniteur_po1
+
+			tulle
+			cyclo
+	
+
+		}
+	}
+ 		
+	subgraph cluster_transfo {
+		label="TRANSFORMABLE"
+
+		photo -> rpi_d 
+		cyclo_2
+		cam_panasonic
+		switch
+	}
+
+	subgraph cluster_hall{
+
+		label="HALL"
+		rpi_f -> moniteur_5 [label=" HDMI"]
+	}
+	
+	{pc_word, mac_1,mac_2, mac_3,rpi_c, rpi_e, mac_admin} -> grille 
+	{pc_word, mac_admin, cam_panasonic} -> switch -> cyclo_2
+
+
+	edge[fontsize=10, color="red", fontcolor=red]
+	camera -> cyclo_2
+
+
+	grille -> {splitter, tulle, cyclo ,moniteur_1,moniteur_2,moniteur_3,moniteur_4}
+
+	splitter ->{moniteur_po1, moniteur_po2}
+
+
+}
