@@ -13,7 +13,7 @@ while true; do
 
 	now=$(date +"%Y%m%d_%H%M%S")
 
-	t="~/Scripts/custom/live-cli/content/anim-e/"
+	t="content/anim-e/"
 	
 	mkdir -vp $t/$now
 	mkdir -vp $t/frames
