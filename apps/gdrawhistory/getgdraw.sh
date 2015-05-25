@@ -4,15 +4,14 @@
 # watch -n 10 bash getgdraw.sh 
 
 name=$1
-size=$2
-url=$3
+inbox=$2
+size=$3
+url=$4
 
 now=$(date +"%Y%m%d_%H%M%S")
-inbox="content/draw-history/"
-
 mkdir -vp $inbox$name
 
-wget -O $inbox$name/$now.png "$url/pub?w=$2&h=$2"
+wget -O $inbox$name/$now.png "$url/pub?w=$size&h=$size"
 rm `duff -re $inbox$name/`
 
 convert -resize $size -alpha remove \
