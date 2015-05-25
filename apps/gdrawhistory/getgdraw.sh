@@ -14,10 +14,22 @@ mkdir -vp $inbox$name
 wget -O $inbox$name/$now.png "$url/pub?w=$size&h=$size"
 rm `duff -re $inbox$name/`
 
+# HD VERSION  
 convert -resize $size -alpha remove \
 				-loop 0  -delay 1x3\
 				-colors 8 -dither FloydSteinberg \
 				"$inbox$name/*.png" $inbox$name/animated.gif
 
 gifsicle -O $inbox$name/animated.gif > $inbox$name/$name-opt.gif
+
+rm $inbox$name/animated.gif
+
+# SD VERSION 
+convert -resize 300 -alpha remove \
+				-loop 0  -delay 1x3\
+				-colors 8 -dither FloydSteinberg \
+				"$inbox$name/*.png" $inbox$name/animated.gif
+
+gifsicle -O $inbox$name/animated.gif > $inbox$name/$name-opt300.gif
+
 rm $inbox$name/animated.gif
