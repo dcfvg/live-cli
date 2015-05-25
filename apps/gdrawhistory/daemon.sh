@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 
 bash getgdraw.sh "main" "../../content/draw-history/" 250 \
 		 "https://docs.google.com/drawings/d/15b1lUUE1S0mQIukwp6-t5wvYep1MiUw-XC6ixeEVTiM"
