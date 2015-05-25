@@ -3,6 +3,12 @@
 
 source config.sh
 
+for pi in ${rpistrans[*]}
+do	
+	echo "=====" $pi "=====" 
+	cpRsaKey $pi
+done
+
 while true; do
 
 	now=$(date +"%Y%m%d_%H%M%S")

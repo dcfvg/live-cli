@@ -18,7 +18,7 @@ rpic=10.10.100.14
 rpid=10.10.100.15
 
 # rpie=10.10.100.15
-# rpif=10.10.100.17
+rpif=10.10.100.19
 
 rpis=($rpia $rpib $rpic $rpid $rpie $rpif)
 rpistrans=($rpia $rpib $rpic $rpid)
