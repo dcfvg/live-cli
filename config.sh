@@ -7,20 +7,21 @@ rpia=10.10.100.12
 rpic=10.10.100.13
 rpid=10.10.100.14
 rpie=10.10.100.15
-rpif=192.168.0.178
+rpif=192.168.0.14
 
 rpis=($rpif)
 
 # amandiers
-# rpia=10.10.100.12
-# rpib=pi@192.168.0.
-# rpic=10.10.100.13
-# rpid=10.10.100.14
-# rpie=10.10.100.15
+rpia=10.10.100.12
+#rpib=pi@192.168.0.
+rpic=10.10.100.13
+rpid=10.10.100.14
+rpie=10.10.100.15
+rpif=10.10.100.17
 
-#rpis=($rpia $rpic $rpid $rpie)
+rpis=($rpia $rpic $rpid $rpie $rpif)
 
 cli="~/Scripts/custom/live-cli"
 content="$cli/content/"
 
-# sudo nmap -sn 192.168.0.0/24
+# sudo nmap -sn 10.10.100.0/24
