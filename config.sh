@@ -2,24 +2,26 @@ source function.sh
 
 
 # gui config
-rpia=10.10.100.12
-# rpib=pi@192.168.0.
-rpic=10.10.100.13
-rpid=10.10.100.14
-rpie=10.10.100.15
-rpif=192.168.0.14
+# rpia=10.10.100.12
+# # rpib=pi@192.168.0.
+# rpic=10.10.100.13
+# rpid=10.10.100.14
+# rpie=10.10.100.15
+# rpif=192.168.0.14
 
-rpis=($rpif)
+# rpis=($rpif)
 
 # amandiers
 rpia=10.10.100.12
-#rpib=pi@192.168.0.
-rpic=10.10.100.13
-rpid=10.10.100.14
-rpie=10.10.100.15
-rpif=10.10.100.17
+rpib=10.10.100.20
+rpic=10.10.100.14
+rpid=10.10.100.15
 
-rpis=($rpia $rpic $rpid $rpie $rpif)
+# rpie=10.10.100.15
+# rpif=10.10.100.17
+
+rpis=($rpia $rpib $rpic $rpid $rpie $rpif)
+rpistrans=($rpia $rpib $rpic $rpid)
 
 cli="~/Scripts/custom/live-cli"
 content="$cli/content/"

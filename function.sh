@@ -9,12 +9,13 @@ function cpRsaKey {
 function installSoft {
   # update and install apps
   ssh pi@$1 '
+  echo ==== $HOSTNAME : installSoft ====
   sudo apt-get upgrade
   sudo apt-get update
   sudo apt-get install  netatalk screen duff nmap chromium\
                         detox bash-completion watch \
                         sane sane-utils libsane-extras xsane \
-                        streamer ffmpeg gifsicle \
+                        streamer ffmpeg gifsicle fswebcam \
                         jpegoptim imagemagick gphoto2 libimage-exiftool-perl
   exit                
   '
@@ -24,6 +25,7 @@ function initProject {
   # init project and clone git repository
 
   ssh pi@$1 '
+  echo ==== $HOSTNAME : initProject ====
 
   cli="Scripts/custom/live-cli"
   content="$cli/content/"
@@ -39,7 +41,8 @@ function updateProjet {
   # get code last version
 
   ssh pi@$1 '
-  
+  echo ==== $HOSTNAME : updateProjet ====
+
   cli="Scripts/custom/live-cli"
   content="$cli/content/"
 

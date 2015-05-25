@@ -8,10 +8,9 @@ do
 	#echo "=====" $pi "=====" 
  	ping -c 1 $pi 
 
-	#ssh pi@$pi
-	#cpRsaKey $pi
-	#installSoft $pi
-	#initProject $pi
-	#updateProjet $pi
-
+	ssh pi@$pi
+	cpRsaKey $pi
+	installSoft $pi
+	initProject $pi
+	updateProjet $pi
 done
