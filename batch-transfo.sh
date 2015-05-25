@@ -3,20 +3,20 @@
 
 source config.sh
 
-for pi in ${rpistrans[*]}
-do	
-	echo "=====" $pi "=====" 
-	cpRsaKey $pi
-done
+# for pi in ${rpistrans[*]}
+# do	
+# 	echo "=====" $pi "=====" 
+# 	cpRsaKey $pi
+# done
 
 while true; do
 
 	now=$(date +"%Y%m%d_%H%M%S")
 
-	t="live-cli/content/anim-e/"
+	t="~/Scripts/custom/live-cli/content/anim-e/"
 	
-	mkdir -p $t/$now
-	mkdir -p $t/frames
+	mkdir -vp $t/$now
+	mkdir -vp $t/frames
 
 	for pi in ${rpistrans[*]}
 	do	
@@ -38,5 +38,7 @@ while true; do
 	composite -geometry +0+0 				$t/$now/d.jpg $t/$now.jpg $t/frames/$now.jpg
 
 	rm $t/$now/a.jpg $t/$now/b.jpg $t/$now/c.jpg $t/$now/d.jpg
+
+	convert -resize 50% $t/frames/$now.jpg $t/live.jpg
 
 done
