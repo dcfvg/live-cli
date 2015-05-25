@@ -3,30 +3,21 @@
 
 source config.sh
 
-
 while true; do
 
 	now=$(date +"%Y%m%d_%H%M%S")
 
 	t="/Users/benoit/Scripts/custom/live-cli/content/anim-e/"
+	
 	mkdir -p $t/$now
 	mkdir -p $t/frames
 
 	for pi in ${rpistrans[*]}
 	do	
 		echo "=====" $pi "=====" 
-
-
 		ssh pi@$pi 'fswebcam -r 1920x1080 --frames 1 --no-banner Scripts/$HOSTNAME-$(date +"%y.%m.%d-%H.%M.%S").jpg; exit'
-
-	done
-	for pi in ${rpistrans[*]}
-	do	
-		echo "=====" $pi "=====" 
 		rsync -avz --remove-source-files -e ssh pi@$pi:~/Scripts/*.jpg $t/$now/
-
 	done
-
 
 	convert -rotate -90 "$t/$now/rpi-a*.jpg" $t/$now/a.jpg
 	convert -rotate  90 "$t/$now/rpi-b*.jpg" $t/$now/b.jpg
