@@ -38,7 +38,7 @@ while true; do
 	composite -geometry +0+0 				$t/$now/d.jpg $t/$now.jpg $t/frames/$now.jpg
 
 
-	convert -resize 50% $t/frames/$now.jpg $t/live.jpg
+	convert -resize 720 -rotate 90 $t/frames/$now.jpg $t/live.jpg
 	rm $t/$now/a.jpg $t/$now/b.jpg $t/$now/c.jpg $t/$now/d.jpg $t/$now.jpg
 
 done
